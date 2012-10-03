@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @name.description %>
+</p>
+
+<p>
+  <b>Img url:</b>
+  <%= @name.img_url %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @name.size %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @name.color %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @name.price %>
+</p>
+
+<p>
+  <b>Sub category:</b>
+  <%= @name.sub_category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_name_path(@name) %> |
+<%= link_to 'Back', names_path %>

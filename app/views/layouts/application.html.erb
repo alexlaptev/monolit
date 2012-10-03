@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monolit</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Монолит Мебель</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Browse Products", products_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+          <li><%= link_to "Sub Categories", sub_categories_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+</div>
+<div class="container">
+
+  <% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
+    <a class="close" data-dismiss="alert">x</a>
+    <%= msg %>
+  </div>
+  <% end %>
+ 
+  <div class="row">
+    <div class="span9"><%= yield %></div>
+    <div class="span3">
+      <h2>About Us</h2>
+      <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque 
+      laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi 
+      architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas 
+      sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione 
+      voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, 
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut 
+      labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
